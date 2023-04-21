@@ -1,15 +1,31 @@
 import React, {useState} from 'react';
 import { KeyboardAvoidingView, StyleSheet, Text, View, TextInput, TouchableOpacity, Keyboard, ScrollView } from 'react-native';
 import Task from './components/Task';
+import Realm from 'realm';
+
+/*class TaskList extends Realm.Object {
+  static schema = {
+    name: 'TaskList',
+    properties: {
+      item: 'string'
+    },
+  };
+}*/
 
 export default function App() {
   const [task, setTask] = useState();
   const [taskItems, setTaskItems] = useState([]);
 
+
+
   const handleAddTask = () => {
     Keyboard.dismiss();
     setTaskItems([...taskItems, task])
     setTask(null);
+
+    /*realm.write(() => {
+      realm.create('TaskList', {item: task})
+    });*/
   }
 
   const completeTask = (index) => {
