@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import { KeyboardAvoidingView, StyleSheet, Text, View, TextInput, TouchableOpacity, Keyboard, ScrollView } from 'react-native';
 import Task from './components/Task';
-import Realm from 'realm';
 
 /*class TaskList extends Realm.Object {
   static schema = {
@@ -69,7 +68,7 @@ export default function App() {
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={styles.writeTaskWrapper}
       >
-        <TextInput style={styles.input} placeholder={'Write a task'} value={task} onChangeText={text => setTask(text)} />
+        <TextInput style={styles.input} placeholder={'Ingresa la tarea'} value={task} onChangeText={text => setTask(text)} />
         <TouchableOpacity onPress={() => handleAddTask()}>
           <View style={styles.addWrapper}>
             <Text style={styles.addText}>+</Text>
